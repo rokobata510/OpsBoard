@@ -33,15 +33,15 @@ A realistic internal tool for operations teams.
 
 ### Tasks
 
-#### 1.1 Project Setup
+#### 1.1 Project Setup ✅
 - Initialize repository
 - Choose stack (Node/Express or Python/FastAPI)
 - Create project structure
 
-#### 1.2 Health Endpoint
+#### 1.2 Health Endpoint ✅
 - `/health` → returns OK
 
-#### 1.3 Incident Model
+#### 1.3 Incident Model ✅
 Fields:
 - id
 - title
@@ -49,7 +49,7 @@ Fields:
 - status (open/in_progress/resolved)
 - created_at
 
-#### 1.4 CRUD Endpoints
+#### 1.4 CRUD Endpoints ✅
 - Create incident
 - List incidents
 - Update status
