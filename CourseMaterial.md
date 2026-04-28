@@ -55,10 +55,10 @@ Fields:
 - Update status
 - Delete incident
 
-#### 1.5 In-Memory Storage
+#### 1.5 In-Memory Storage ✅
 - Temporary storage for incidents
 
-### Deliverable
+### Deliverable ✅
 - API runs locally
 - CRUD works via curl/Postman
 
@@ -68,11 +68,11 @@ Fields:
 
 ### Tasks
 
-#### 2.1 PostgreSQL Setup
+#### 2.1 PostgreSQL Setup ✅
 - Install and run locally
 
 #### 2.2 Replace In-Memory Storage
-- Store incidents in DB
+- Store incidents in DB - OTT HAGYTAD ABBA, HOGY A GET, POST ENDPOINT MEGVAN, TESZTELETLENÜL, KÖVI A DELETE ENDPOINT LEGYEN
 
 #### 2.3 User Model
 Fields:
