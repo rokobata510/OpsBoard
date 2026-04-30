@@ -71,24 +71,24 @@ Fields:
 #### 2.1 PostgreSQL Setup ✅
 - Install and run locally
 
-#### 2.2 Replace In-Memory Storage
-- Store incidents in DB - OTT HAGYTAD ABBA, HOGY A GET, POST ENDPOINT MEGVAN, TESZTELETLENÜL, KÖVI A DELETE ENDPOINT LEGYEN
+#### 2.2 Replace In-Memory Storage ✅
+- Store incidents in DB
 
-#### 2.3 User Model
+#### 2.3 User Model ✅
 Fields:
 - id
 - email
 - password (hashed)
 
-#### 2.4 Authentication
+#### 2.4 Authentication ✅
 - Register endpoint
 - Login endpoint
 - JWT token
 
-#### 2.5 Ownership
+#### 2.5 Ownership  ✅
 - Link incidents to users
 
-### Deliverable
+### Deliverable 
 - Authenticated users manage their own incidents
 
 ---

@@ -1,6 +1,26 @@
+import os
+
 import psycopg
 
-DATABASE_URL = "postgresql://postgres:atatata51RA%40@localhost:5432/opsboard"
+
+def load_env_file(path: str = ".env"):
+    if not os.path.exists(path):
+        return
+
+    with open(path) as env_file:
+        for line in env_file:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+
+            key, value = line.split("=", 1)
+            os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
+
 
 def get_connection():
-    return psycopg.connect(DATABASE_URL)
+    load_env_file()
+    database_url = os.getenv("DATABASE_URL")
+    if database_url is None:
+        raise RuntimeError("DATABASE_URL is not set")
+
+    return psycopg.connect(database_url)
