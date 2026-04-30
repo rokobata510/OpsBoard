@@ -97,10 +97,10 @@ Fields:
 
 ### Tasks
 
-#### 3.1 Nginx Setup
+#### 3.1 Nginx Setup ✅
 - Reverse proxy `/api` → backend
 
-#### 3.2 Domain Setup (Optional)
+#### 3.2 Domain Setup (Optional) ✅
 - Use hosts file or real domain
 
 #### 3.3 HTTPS Preparation
@@ -369,5 +369,3 @@ A realistic, production-style SaaS system demonstrating:
 - DevOps automation  
 - Infrastructure management  
 - System reliability  
-
-This project directly maps to real-world DevOps and cloud engineering roles.

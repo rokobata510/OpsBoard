@@ -3,3 +3,5 @@ cv/
 .env
 __pycache__/
 *.pyc
+nginx-1.29.8/
+nginxActivator.txt
