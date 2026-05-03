@@ -3,7 +3,7 @@ import os
 import psycopg
 
 
-def load_env_file(path: str = ".env"):
+def load_env_file(path: str = ".env.local"):
     if not os.path.exists(path):
         return
 

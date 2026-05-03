@@ -103,10 +103,10 @@ Fields:
 #### 3.2 Domain Setup (Optional) ✅
 - Use hosts file or real domain
 
-#### 3.3 HTTPS Preparation
+#### 3.3 HTTPS Preparation ✅
 - Plan TLS integration
 
-### Deliverable
+### Deliverable ✅
 - API accessible through Nginx
 
 ---
@@ -115,22 +115,22 @@ Fields:
 
 ### Tasks
 
-#### 4.1 Dockerfile
+#### 4.1 Dockerfile ✅
 - Build API image
 - Use multi-stage builds
 
-#### 4.2 Docker Compose
+#### 4.2 Docker Compose ✅
 - API + PostgreSQL services
 
-#### 4.3 Environment Variables
+#### 4.3 Environment Variables ✅
 - Configure DB connection
 
-#### 4.4 Data Persistence
+#### 4.4 Data Persistence ✅
 - Add volume for database
 
-### Deliverable
+### Deliverable ✅
 - Full system runs with:
-
+- docker-compose up
 
 ---
 
@@ -140,10 +140,10 @@ Fields:
 
 ### Tasks
 
-#### 5.1 AWS Setup
+#### 5.1 AWS Setup ✅
 - Create account
 
-#### 5.2 EC2 Instance
+#### 5.2 EC2 Instance ✅
 - Launch Ubuntu instance
 
 #### 5.3 Install Docker

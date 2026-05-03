@@ -1,0 +1,10 @@
+.venv/
+.env.local
+nginx-1.29.8/
+__pycache__/
+.git/
+.playwright-mcp/
+*.pyc
+.pytest_cache/
+pytest-cache-files-*/
+.env.compose

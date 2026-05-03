@@ -1,7 +1,12 @@
 .playwright-mcp/
 cv/
-.env
+.env.local
 __pycache__/
 *.pyc
 nginx-1.29.8/
 nginxActivator.txt
+.env.compose
+*.pem
+.env
+HungaryEntryLevelCSJobPayAnalysis.md
+CloudDevOpsSRECareerPath.md
