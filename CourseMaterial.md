@@ -172,10 +172,10 @@ Fields:
 - Region
 - Instance type
 
-#### 6.4 Lifecycle
+#### 6.4 Lifecycle ✅
 - Apply and destroy infra
 
-### Deliverable
+### Deliverable ✅
 - Full infrastructure managed via Terraform
 
 ---
@@ -186,7 +186,7 @@ Fields:
 
 #### 7.1 GitHub Actions Setup
 
-#### 7.2 Pipeline Steps
+#### 7.2 Pipeline Steps ✅
 - Install dependencies
 - Run tests
 - Build Docker image
