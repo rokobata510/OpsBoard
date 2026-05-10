@@ -10,3 +10,8 @@ nginxActivator.txt
 .env
 HungaryEntryLevelCSJobPayAnalysis.md
 CloudDevOpsSRECareerPath.md
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+*.pem

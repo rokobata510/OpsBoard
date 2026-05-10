@@ -146,13 +146,13 @@ Fields:
 #### 5.2 EC2 Instance ✅
 - Launch Ubuntu instance
 
-#### 5.3 Install Docker
+#### 5.3 Install Docker ✅
 - Prepare runtime environment
 
-#### 5.4 Deploy App
+#### 5.4 Deploy App ✅
 - Run containers manually
 
-### Deliverable
+### Deliverable ✅
 - API accessible via public IP
 
 ---
@@ -161,14 +161,14 @@ Fields:
 
 ### Tasks
 
-#### 6.1 Terraform Init
+#### 6.1 Terraform Init ✅
 - Create project structure
 
-#### 6.2 Define Infrastructure
+#### 6.2 Define Infrastructure ✅
 - EC2 instance
 - Security group
 
-#### 6.3 Variables
+#### 6.3 Variables ✅
 - Region
 - Instance type
 
