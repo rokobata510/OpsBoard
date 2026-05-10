@@ -56,8 +56,9 @@ jobs:
           JWT_SECRET: test-secret
 
       - name: Build Docker image
-        run: docker build \
-                -t $IMAGE_NAME:${{ github.sha }}\
+        run: | 
+                docker build \
+                -t $IMAGE_NAME:${{ github.sha }} \
                 -t $IMAGE_NAME:latest \
                 .
       - name: Log in to Github Container Registry
