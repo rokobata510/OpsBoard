@@ -5,6 +5,13 @@ on:
     branches: ["master"]
   pull_request:
 
+permissions:
+  contents: read
+  packages: write
+
+env: 
+  IMAGE_NAME: ghcr.io/rokobata510/opsboard-api
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
@@ -49,4 +56,16 @@ jobs:
           JWT_SECRET: test-secret
 
       - name: Build Docker image
-        run: docker build -t opsboard-api:${{ github.sha }} .
+        run: docker build \
+                -t $IMAGE_NAME:${{ github.sha }}\
+                -t $IMAGE_NAME:latest \
+                .
+      - name: Log in to Github Container Registry
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+
+      - name: Push Docker image
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: |
+          docker push $IMAGE_NAME:${{ github.sha }}
+          docker push $IMAGE_NAME:latest
