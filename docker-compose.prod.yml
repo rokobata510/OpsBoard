@@ -12,7 +12,7 @@ services:
       - "5432:5432"
 
   api:
-    image: ghcr.io/rokobata510/opsboards-api:latest
+    image: ghcr.io/rokobata510/opsboard-api:latest
     environment:
       DATABASE_URL: ${DATABASE_URL}
       JWT_SECRET: ${JWT_SECRET}

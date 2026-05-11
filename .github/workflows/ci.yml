@@ -9,7 +9,7 @@ permissions:
   contents: read
   packages: write
 
-env: 
+env:
   IMAGE_NAME: ghcr.io/rokobata510/opsboard-api
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres: 
+      postgres:
         image: postgres:18
         env:
           POSTGRES_USER: postgres
@@ -42,7 +42,7 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
-      
+
       - name: Initialize test database
         run: psql "$DATABASE_URL" -f db/init.sql
         env:
@@ -56,12 +56,13 @@ jobs:
           JWT_SECRET: test-secret
 
       - name: Build Docker image
-        run: | 
-                docker build \
-                -t $IMAGE_NAME:${{ github.sha }} \
-                -t $IMAGE_NAME:latest \
-                .
-      - name: Log in to Github Container Registry
+        run: |
+          docker build \
+            -t $IMAGE_NAME:${{ github.sha }} \
+            -t $IMAGE_NAME:latest \
+            .
+
+      - name: Log in to GitHub Container Registry
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
 
@@ -70,17 +71,20 @@ jobs:
         run: |
           docker push $IMAGE_NAME:${{ github.sha }}
           docker push $IMAGE_NAME:latest
+
       - name: Deploy to EC2
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: appleboy/ssh-action@v1.2.0
-        with: 
+        with:
           host: ${{ secrets.EC2_HOST }}
-          username:  ${{ secrets.EC2_USER }}
-          key:  ${{ secrets.EC2_SSH_KEY }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            set -e
             cd ~/OpsBoard
-            git pull 
-            docker compose -f docker-compose.prod.yml pull api 
-            docker compose -f docker-compose.prod.yml up -d 
+            git pull --ff-only
+            docker compose -f docker-compose.prod.yml pull api
+            docker compose -f docker-compose.prod.yml up -d db
+            docker compose -f docker-compose.prod.yml up -d --no-deps --force-recreate api
             docker image prune -f
 
