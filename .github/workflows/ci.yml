@@ -70,3 +70,17 @@ jobs:
         run: |
           docker push $IMAGE_NAME:${{ github.sha }}
           docker push $IMAGE_NAME:latest
+      - name: Deploy to EC2
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: appleboy/ssh-action@v1.2.0
+        with: 
+          host: ${{ secrets.EC2_HOST }}
+          username:  ${{ secrets.EC2_USERNAME }}
+          key:  ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            cd ~/OpsBoard
+            git pull 
+            docker compose -f docker-compose.prod.yml pull api 
+            docker compose -f docker-compose.prod.yml up -d 
+            docker image prune -f
+
