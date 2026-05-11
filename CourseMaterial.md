@@ -186,7 +186,7 @@ Fields:
 
 #### 7.1 GitHub Actions Setup ✅
 
-#### 7.2 Pipeline Steps 
+#### 7.2 Pipeline Steps ✅
 - Install dependencies
 - Run tests
 - Build Docker image
