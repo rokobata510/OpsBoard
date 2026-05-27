@@ -4,3 +4,4 @@ psycopg[binary]
 bcrypt
 pytest
 httpx
+prometheus-fastapi-instrumentator
