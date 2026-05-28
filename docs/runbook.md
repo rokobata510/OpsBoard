@@ -196,7 +196,7 @@ eksctl delete cluster -f eksctl/opsboard-cluster.yml
 Check for remaining AWS costs:
 
 ```powershell
-aws ec2 describe-load-balancers
+aws elbv2 describe-load-balancers --region eu-central-1
 aws ec2 describe-instances --region eu-central-1
 aws ec2 describe-volumes --region eu-central-1
 ```
