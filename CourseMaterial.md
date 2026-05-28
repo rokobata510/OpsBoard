@@ -253,17 +253,17 @@ Fields:
 
 ### Tasks
 
-#### 10.1 Managed Cluster
+#### 10.1 Managed Cluster ✅
 - Create EKS (or equivalent)
 
-#### 10.2 kubectl Access
+#### 10.2 kubectl Access ✅
 
-#### 10.3 Deploy Application
+#### 10.3 Deploy Application ✅
 
-#### 10.4 Ingress
+#### 10.4 Ingress ✅
 - Expose via HTTP endpoint
 
-### Deliverable
+### Deliverable ✅
 - Public Kubernetes deployment
 
 ---

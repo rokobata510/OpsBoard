@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opsboard-api-public
+spec:
+  type: LoadBalancer
+  selector:
+    app: opsboard-api
+  ports:
+    - port: 80
+      targetPort: 8000
