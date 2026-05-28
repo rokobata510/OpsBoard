@@ -3,7 +3,12 @@ kind: Deployment
 metadata:
   name: opsboard-api
 spec:
-  replicas: 1
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
   selector:
     matchLabels:
       app: opsboard-api
@@ -17,6 +22,18 @@ spec:
           image: ghcr.io/rokobata510/opsboard-api:latest
           ports:
             - containerPort: 8000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 20
           env:
             - name: POSTGRES_USER
               valueFrom:
