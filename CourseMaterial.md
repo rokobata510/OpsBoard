@@ -233,18 +233,18 @@ Fields:
 
 ### Tasks
 
-#### 9.1 Install Cluster
+#### 9.1 Install Cluster ✅
 - minikube or kind
 
-#### 9.2 Deployment Config
+#### 9.2 Deployment Config ✅
 - Create Deployment YAML
 
-#### 9.3 Service Config
+#### 9.3 Service Config ✅
 - Create Service YAML
 
-#### 9.4 Deploy App
+#### 9.4 Deploy App ✅
 
-### Deliverable
+### Deliverable ✅
 - App runs in Kubernetes locally
 
 ---
