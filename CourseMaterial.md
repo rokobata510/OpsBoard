@@ -293,17 +293,19 @@ Fields:
 
 ### Tasks
 
-#### 12.1 Failure Testing 
+#### 12.1 Failure Testing ✅
 - Kill pods
 - Stop services
 - Observe recovery
 
-#### 12.2 Feature Enhancements 
+#### 12.2 Feature Enhancements — Skipped
 - Add priority field (low/medium/high)
 - Add filtering
 - Improve timestamps
 
-#### 12.3 Documentation
+Skipped because this is application feature work and does not materially improve the DevOps/SRE learning objective.
+
+#### 12.3 Documentation ✅
 
 Create:
 
@@ -317,7 +319,7 @@ Create:
 - Request flow
 - Infrastructure layout
 
-#### 12.4 Presentation Prep
+#### 12.4 Presentation Prep ✅
 Be able to explain:
 - Docker usage
 - Terraform benefits
